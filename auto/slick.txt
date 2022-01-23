@@ -1,0 +1,53 @@
+ПОДКЛЮЧЕНИЕ slick-слайдера (для секции section class="carousel"):
+
+1- перейти на сайт: https://kenwheeler.github.io/slick/
+2- качаем архив (во вкладке меню: get it now) В архиве нам нужны для проекта 2-а файла: slick.css и slick.min.js Их нужно разместить в папках css и js проекта соответственно и подключить в файле index.html (при подключении файлов js важен порядок подключения, а именно между подключением библитеки jquery и нашего главного файла main.js):
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Сайт построен</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/slick.css">
+	<link rel="stylesheet" href="css/jquery.fancybox.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/jquery.fancybox.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+3- в файле main.js в функции пропишем необходимые свойства слайдера
+После этого родительскому классу <div class="carousel__inner"> и классу-контейнеру для элементов слайдера <div class="carousel__item"> автоматически добавятся небходимые свойства из подключенных библиотек Мы специально создали дополнительную обёртку для элеменов <div class="carousel__item-box"> на которой ничего не висит и поэтому нам с ней будет удобно работать, задавая свойства для элементов (слайдов)
+4- чтобы стилизовать стрелочки и slick-dots (и точки под слайдером (здесь вместо них рисуем линии)), прописываем необходимые свойства в css-файле (например здесь реализовано так): 
+
+/* только для slick-dots(точек) которые находятся в классе carousel */
+.carousel .slick-dots {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+	list-style: none; /* убираем маркеры, которые добавлены автоматически (по умолчанию) */
+}
+
+.carousel .slick-dots button {
+	font-size: 0; /* убираем цифры внутри slick-dots, которые появились автоматически (по умолчанию) */
+	border: none; /* убираем границу вокруг slick-dots (по умолчанию) */
+	padding: 0; /* убираем внутренние отступы (поля), установленные по умолчанию */
+	margin: 0 10px;
+	background-color: #c4c4c4;
+	width: 50px;
+	height: 2px;
+}
+
+.carousel .slick-active button {
+	background-color: #5a0d67;
+	height: 3px;
+}

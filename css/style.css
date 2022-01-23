@@ -308,6 +308,7 @@ a {
 	border-color: #5a0d67;
 }
 
+/* картинки слайдера */
 .carousel__item-img {
 	max-width: 100%;
 	margin-bottom: 23px;
@@ -318,21 +319,22 @@ a {
 	margin-bottom: 5px;
 }
 
+/* только для slick-dots(точек) которые находятся в классе carousel */
 .carousel .slick-dots {
 	display: flex;
 	justify-content: center;
 	margin-top: 50px;
-	list-style: none;
+	list-style: none; /* убираем маркеры, которые добавлены автоматически (по умолчанию) */
 }
 
 .carousel .slick-dots button {
-	font-size: 0;
-	border: none;
-	padding: 0;
+	font-size: 0; /* убираем цифры внутри slick-dots, которые появились автоматически (по умолчанию) */
+	border: none; /* убираем границу вокруг slick-dots (по умолчанию) */
+	padding: 0; /* убираем внутренние отступы (поля), установленные по умолчанию */
 	margin: 0 10px;
 	background-color: #c4c4c4;
 	width: 50px;
-	height: 1px;
+	height: 2px;
 }
 
 .carousel .slick-active button {
